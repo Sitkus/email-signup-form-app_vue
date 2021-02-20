@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Modal v-if="displayModal" :onClose="closeModal">
+    <Modal v-if="displayModal" @close-modal="closeModal">
       <Form @form-submitted="closeModal" />
     </Modal>
   </div>
