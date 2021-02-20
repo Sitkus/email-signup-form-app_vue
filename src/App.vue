@@ -1,28 +1,33 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Modal v-if="displayModal" :onClose="closeModal">
+      <Form @form-submitted="closeModal" />
+    </Modal>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { Form, Modal } from './components';
 
 export default {
   name: 'App',
+  data() {
+    return {
+      displayModal: true
+    };
+  },
   components: {
-    HelloWorld
+    Form,
+    Modal
+  },
+  methods: {
+    closeModal() {
+      this.displayModal = false;
+    }
   }
-}
+};
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+//
 </style>
