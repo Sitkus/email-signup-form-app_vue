@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <main class="main">
     <Modal v-if="displayModal" @close-modal="closeModal">
       <Form @form-submitted="closeModal" />
     </Modal>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -29,5 +29,10 @@ export default {
 </script>
 
 <style lang="scss">
-//
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 </style>
